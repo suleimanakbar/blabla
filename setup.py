@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='firstproject',
+    name='cloud_proj',
     version='',
     packages=['venv.lib.python2.7.distutils', 'venv.lib.python2.7.encodings', 'venv.lib.python2.7.site-packages.pip',
               'venv.lib.python2.7.site-packages.pip.req', 'venv.lib.python2.7.site-packages.pip.vcs',
