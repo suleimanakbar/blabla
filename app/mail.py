@@ -38,14 +38,14 @@ class SendMail(MainRequestHandler):
         #SEND EMAIL FUNCTION TO SEND MESSAGES TO OTHER USERS ADDRESSES
         #USING THE GOOGLE MAIL API
         email_object = mail.EmailMessage(
-            sender='noreply@ultra-water-197221.appspotmail.com',
+            sender='',
             subject=subject,
             to=to
         )
         #GENERATE THE EMAIL PARAMETERS
         email_parameters = {
             'domain': 'http://localhost:8081' if environ['SERVER_SOFTWARE'].startswith(
-                'Development') else 'http://ultra-water-197221.appspot.com',
+                'Development') else '',
             'subject': subject,
             'content': content
         }
