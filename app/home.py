@@ -21,5 +21,3 @@ class Home(MainRequestHandler):
 
         template = self.jinja_environment.get_template('home/home.html')
         self.response.write(template.render(template_values))
-        #RENDER THE HOME PAGE
-        #self.render('home/home.html')
