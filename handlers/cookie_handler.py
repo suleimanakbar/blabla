@@ -1,6 +1,6 @@
 from hashlib import sha256
 
-SECRET_KEY = "bkFibeNg5R3w8W1BozaMNqEleBdD2b6V7XqrdVHaapvD+u+Q8Eli+Hs4IzCAvaRmITtiHcdmz3Lgv40Li0D1tg=="
+SECRET_KEY = ""
 
 
 # SIGN COOKIE WITH SECRET MESSAGE(SIGNATURE)
