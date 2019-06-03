@@ -31,6 +31,3 @@ app = WSGIApplication(
     ]
 )
 
-# http://ultra-water-197221.appspot.com/account/5629499534213120/confirm/0f99496ab83847608fd0ebda2fa66acd
-
-# http://localhost:8081/account/38be0b12150f5629499534213120/confirm/fbda075367fa49c
