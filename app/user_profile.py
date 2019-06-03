@@ -105,7 +105,7 @@ class PostMessage(MainRequestHandler):
         img_content = photo.file.read()
         img_type = photo.type
 
-        cloud_storage_path = '/gs/ultra-water-197221-images/%s/%s' % (user_key.id(), img_title)
+        cloud_storage_path = '' % (user_key.id(), img_title)
         blobstore_key = blobstore.create_gs_key(cloud_storage_path)
 
         cloud_storage_file = cloudstorage_api.open(
