@@ -78,7 +78,7 @@ class RegisterUser(MainRequestHandler):
     @classmethod
     def acc_conf_email(cls, to, name, user_id, confirmation_code):
         email_obj = mail.EmailMessage(
-            sender='noreply@testproj-197311.appspotmail.com',
+            sender='',
             subject='Confirm your BlaBla user_profile',
             to=to
         )
@@ -86,7 +86,7 @@ class RegisterUser(MainRequestHandler):
         # EMAIL PARAMETERS PERTAINING TO BOTH LOCAL ENV AND APP ENGINE
         email_params = {
             'domain': 'http://localhost:8080' if environ['SERVER_SOFTWARE'].startswith(
-                'Development') else 'http://testproj-197311.appspot.com',
+                'Development') else '',
             'name': name,
             'user_id': user_id,
             'confirmation_code': confirmation_code
