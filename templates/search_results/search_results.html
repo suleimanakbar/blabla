@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+
+{% block title %}Messages for {{ query }}{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        <div class="row">
+            <h2>Messages for {{ query }}</h2>
+        </div>
+        {% for message in messages %}
+            <div>
+                <a href="/message/{{ message.doc_id }}">
+                    {{ message.title[0].value }}
+                </a>
+            </div>
+            <div>
+                <a href="/message/{{ message.doc_id }}">
+                    {{ message.expressions[0].value }}
+                </a>
+            </div>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

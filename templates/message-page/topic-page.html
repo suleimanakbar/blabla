@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+
+{% block title %}
+    {{ topic.topic }}
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-lg-5">
+            <div class="row">
+                <h1>Topic:{{ topic.topic }}</h1>
+            </div>
+            {% for message in messages %}
+                <a href="/message/{{ message.doc_id }}">
+                    <div class="col-lg-3">
+                        <div><h3>Title:
+                            {{ message.title[0].value }}
+                        </h3>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

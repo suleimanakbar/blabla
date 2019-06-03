@@ -1,0 +1,47 @@
+{% extends "main.html" %}
+
+{% block title %}
+    {{ message.title }}
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-lg-5">
+            <div class="row">
+                <h1>Post Title: {{ message.title }}</h1>
+            </div>
+            <div><h3>Topic: {{ message.topic }}</h3></div>
+            {% if message.content %}
+                <div>
+                    <h4>Content:</h4>
+                    <p>{{ message.content }}</p>
+                </div>
+            {% endif %}
+
+
+            {% if message.photo_url %}
+                <h4>Image:</h4>
+                <div class="img-circle">
+                    <img src={{ message.photo_url }} alt="" width="50" height="50">
+                </div>
+
+            {% endif %}
+
+            <a href="/mail/{{ message_id }}">
+                <div><h4>Click here email to author: {{ author.name }}</h4></div>
+            </a>
+            <a href="/reply/{{ message_id }}">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <button type="submit" class="btn btn-primary">Reply</button>
+                </div>
+            </a>
+            {% for reply in replies %}
+            <div class="container">
+                <div class="row">
+                    <p>{{ reply.content[0].value }}</p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

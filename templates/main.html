@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id"
+          content="706694143343-of5cflnhu99a9f5cnqhquo1h3pn1ijlh.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/custom.css.css">
+
+    <style>
+        body {
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+{% include "register/navbar.html" %}
+{% include "register/register_user.html" %}
+
+{% block content %}
+
+{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+
+{% include "register/register_user.js.html" %}
+{% include "login/glogin_user.js.html" %}
+
+</body>
+</html>

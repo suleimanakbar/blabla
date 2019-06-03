@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+
+{% block title %}BlaBla{% endblock %}
+
+{% block content %}
+
+    <div class="main-header">
+        <div class="container">
+            <div class="row" style="padding-top: 175px;">
+                <div class="col-lg-6 col-lg-offset-3">
+                   <p><h1 class="center">BlaBla</h1></p>
+                    <form action="/search" method="get">
+                        <div class="input-group form-group form-group-lg">
+                            <input type="text" class="form-control col-lg-6" placeholder="Search Topics" name="q">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

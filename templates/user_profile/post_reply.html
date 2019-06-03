@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+
+{% block title %} Post a new reply {% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <h2>Post a new reply</h2>
+        </div>
+
+        <div class="row">
+            <form class="form-horizontal" action="/reply" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="text" class="form-control" style="display: none;" name="message_id" id="message_id" value={{ message_id }}>
+                    <label for="content" class="col-lg-2 control-label">Reply</label>
+                    <div class="col-lg-6">
+                        <textarea class="form-control" name="content" id="content" placeholder="Reply Content"
+                                  cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button type="submit" class="btn btn-primary">Post Reply</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+<script>
+
+    $('#register-button').click(function () {
+
+        var email = $('#user_email').val();
+        var name = $('#name').val();
+        var password = $('#password').val();
+
+        $('#register-button-message').html('Registering.');
+
+        $.ajax({
+            type: "POST",
+            url: "/register",
+            data: {
+                email: email,
+                name: name,
+                password: password
+            },
+            success: function (response) {
+                $('#register-button[type="button"]').hide();
+                $('.modal-body').html(response['html']);
+            },
+            error: function (response) {
+                console.log(response)
+                var ajaxerrors = $('#ajax-errors');
+                var title = response.responseJSON['title'];
+                var message = response.responseJSON['message'];
+
+                ajaxerrors.css('display', 'block');
+                ajaxerrors.find('strong').html(title);
+                ajaxerrors.find('span').html(message);
+            },
+            complete: function () {
+                $('#register-button[type="button"]').hide();
+            }
+        })
+    })
+
+</script>

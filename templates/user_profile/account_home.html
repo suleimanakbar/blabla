@@ -1,0 +1,66 @@
+{% extends "main.html" %}
+
+{% block title %}My Account{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h2>My Account</h2>
+        </div>
+        <div class="row">
+            <a href="/user_profile/post-message">
+                <div class="col-lg-3">
+                    <div>
+                        <h3>Post new message</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="/user_profile/new-topic">
+                <div class="col-lg-3">
+                    <div>
+                        <h3>Create a new topic</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h2>User Posts</h2>
+        </div>
+    </div>
+
+{#POST TITLES#}
+    {% for message in messages %}
+        <div class="container">
+            <div class="row">
+                <a href="/message/{{ message.doc_id }}">
+                    <h2>{{ message.title[0].value }}</h2>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    {% endfor %}
+
+
+    <div class="container">
+        <div class="row">
+            <h2>Topics</h2>
+        </div>
+    </div>
+
+{#POST TOPICS#}
+    {% for topic in topics %}
+        <div class="container">
+            <div class="row">
+                <a href="/topic/{{ topic.doc_id }}">
+                    <h2>{{ topic.topic[0].value }}</h2>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    {% endfor %}
+
+
+{% endblock %}
